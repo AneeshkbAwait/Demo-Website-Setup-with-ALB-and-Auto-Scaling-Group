@@ -4,7 +4,7 @@ data "aws_ami" "myami" {
   most_recent = true
   filter {
     name   = "name"
-    values = ["zomato-prod-*"]
+    values = ["testpjt-prod-*"]
   }
 }
 
