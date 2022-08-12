@@ -5,7 +5,8 @@ The aim is to setup a demo website which should use the basic AWS Auto Scaling G
 This project reusing the below VPC Module for VPC setup;
 https://github.com/AneeshkbAwait/VPC-Module---Terraform.git
 
-Application latest image is built using Packer and which is pulled to the ASG Launch Configuration using approrpiate filters.
+Application latest image is built using Packer Image Builder and which is pulled to the ASG Launch Configuration using approrpiate filters. Please have a visit in my below repository to know more about HashiCorp Packer Image building:
+https://github.com/AneeshkbAwait/Golden-AMI-Creation-using-HashiCorp-Packer.git
 
 ALB make use of SSL certificate imported from ACM to secure the website and http to https redirection is enabled from ALB. 
 
