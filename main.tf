@@ -82,7 +82,7 @@ resource "aws_security_group" "sg" {
 }
 
 #---------------------------------------------
-# Creating the Launch Configuration
+# Creating the Launch Configuration for AsG
 #---------------------------------------------
 
 resource "aws_launch_configuration" "myapp" {
@@ -99,9 +99,9 @@ resource "aws_launch_configuration" "myapp" {
 
 }
 
-#---------------------------------------------
-# Creating the ASG
-#---------------------------------------------
+#-------------------------------------------------------------------------------
+# Creating the ASG with the Launch Configuration Created in the previous step
+#--------------------------------------------------------------------------------
 
 
 resource "aws_autoscaling_group" "myapp" {
@@ -206,7 +206,7 @@ resource "aws_lb_listener" "https" {
   port              = "443"
   protocol          = "HTTPS"
   ssl_policy        = "ELBSecurityPolicy-2016-08"
-  certificate_arn   = "arn:aws:acm:ap-south-1:254356662519:certificate/8edc3245-a7d9-48ee-805d-4f5ceb796d18"
+  certificate_arn   = "arn:aws:acm:ap-south-1:254356662512:certificate/8edc3245-a7d9-48ee-805d-4f5ceb796d18"
 
   default_action {
     type             = "forward"
@@ -264,7 +264,7 @@ resource "aws_lb_listener_rule" "redirect_http_to_https" {
 
 
 #---------------------------------------------
-# R53 Alias Creation for ALB
+# Setting R53 Alias for ALB
 #---------------------------------------------
 
 resource "aws_route53_record" "alias" {
