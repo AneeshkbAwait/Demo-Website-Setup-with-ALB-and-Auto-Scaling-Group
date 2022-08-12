@@ -2,7 +2,7 @@
 
 The aim is to setup a demo website which should use the basic AWS Auto Scaling Group feature along with Application Load Balancer for load balancing the website to outside world.
 
-This project reusing a VPC Module for VPC setup. You can view the VPC module in my below repository;
+This project reusing the below VPC Module for VPC setup;
 https://github.com/AneeshkbAwait/VPC-Module---Terraform.git
 
 Application latest image is built using Packer and which is pulled to the ASG Launch Configuration using approrpiate filters.
