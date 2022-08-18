@@ -21,7 +21,6 @@ AWS features were used.
 - Target Group
 - Route53 Aliasing
 - ACM
-
 ### variables.tf
 The defined variables for the project like the region, subnet_cidr, project_name..
 ```
@@ -50,7 +49,6 @@ variable "instance_type" {
   default = "t2.micro"
 }
 ```
-
 ### provider.tf
 The provider configuration. We are using Ec2 based IAM roles to get access to the AWS resources.
 ```
@@ -59,7 +57,6 @@ provider "aws" {
   region = var.region
 }
 ```
-
 ### data_source.tf
 Image built using Packer and route53 zone details were fetched through Data sources. 
 ```
@@ -79,7 +76,6 @@ data "aws_route53_zone" "myzone" {
   private_zone = false
 }
 ```
-
 ### main.tf
 Infrastructure setup code. VPC creation was done using the VPC Module which I created earlier. All the required resources; Ec2, Auto Scaling Group, Launch Configuration, Application Load Balancer, Target Group, Route53 Aliasing and ACM were created.
 ```
